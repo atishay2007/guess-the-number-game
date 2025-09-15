@@ -8,7 +8,13 @@ attempts = 0
 guess = None
 
 while guess != secret:
-    guess = int(input("👉 Your guess: "))
+    guess_input = input("👉 Your guess: ")
+    
+    if not guess_input.isdigit():
+        print("Bruh, that’s not even a number. Try again.")
+        continue
+
+    guess = int(guess_input)
     attempts += 1
 
     if guess < secret:
